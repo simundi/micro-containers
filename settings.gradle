@@ -1,0 +1,8 @@
+rootProject.name = 'micro-containers'
+
+include 'dropwizard'
+
+include 'spring-boot'
+
+include 'wildfly-swarm'
+

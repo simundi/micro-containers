@@ -1,0 +1,25 @@
+apply plugin: 'gradle-one-jar'
+apply plugin: 'application'
+
+mainClassName = 'com.simundi.dropwizard.DropwizardApplication'
+
+dependencies {
+    compile 'io.dropwizard:dropwizard-core:0.8.1'
+}
+
+build.dependsOn.add("oneJar")
+
+task oneJar(type: OneJar) {
+    mainClass = mainClassName
+}
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.github.rholder:gradle-one-jar:1.0.4'
+    }
+}
