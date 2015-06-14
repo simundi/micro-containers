@@ -1,6 +1,14 @@
 # micro-containers
 
-## Run and test
+Just playing around with the options available to build services using "embedded containers" 
+
+
+* [Build, Run and Test](#build-run-and-test)
+ * [Building Wildfly-Swarm and examples](#building-wildfly-swarm-and-examples)
+
+
+
+## Build, Run and Test
 
 To build most of the exmaples just run a normal grandle command:
 
@@ -20,9 +28,10 @@ To build most of the exmaples just run a normal grandle command:
     http://localhost:8180/spring-boot/hello
     http://localhost:8280/swarm/hello
  
-### Building Wildfly-Swarm and examples (never to be called only Swarm because of Legal)
+### Building Wildfly-Swarm and examples 
+*(never to be called only Swarm because of Legal)*
  
-Wildfly-swarm examples uses maven because there is no Gradle plugin, all examples use maven and I don' want spend time do it myself. (let' live with what we have today)  
+Wildfly-swarm example uses maven because there is no Gradle plugin, all examples use maven and I don' want spend time do it myself. (let' live with what we have today)  
  
 I've got the code from git and build it myself. It requires maven 3.2.1 or higher
  
@@ -37,8 +46,7 @@ If you want to to run the wildfly-swarm-examples exmaples:
     cd wildfly-swarm;mvn clean install;
     
 Now you can go to the wildfly-swarm module on this repo and run `mvn clean package`     
-    
-    
+        
 
 ## What I mean by "container"?
 I'm using similar definition as the C4 model  (http://static.codingthearchitecture.com/c4.pdf).
@@ -46,17 +54,19 @@ I'm using similar definition as the C4 model  (http://static.codingthearchitectu
 "something like a web application, desktop application, mobile app, database, file system, etc. Essentially, what I call a container is anything that can host code or data." @simonbrown
 
 
+# Dropwizard
 
+# Spring-boot
 
-Dropwizard
-Spring-boot
-Wildfly-swarm
+# Wildfly-swarm
 
 More info: 
 * http://wildfly.org/news/2015/05/05/WildFly-Swarm-Released/
 * https://github.com/wildfly-swarm/wildfly-swarm
 
-Spray?
+# Twitter Server
+Not done yet. Probably need to look at finatra
+ 
 
 
 
