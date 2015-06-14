@@ -59,20 +59,20 @@ I'm using similar definition as the C4 model  (http://static.codingthearchitectu
 "something like a web application, desktop application, mobile app, database, file system, etc. Essentially, what I call a container is anything that can host code or data." @simonbrown
 
 
-# Dropwizard
+## Dropwizard
 
-# Spring-boot
+## Spring-boot
 
 Spring-boot executable jars
 http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#executable-jar
 
-# Wildfly-swarm
+## Wildfly-swarm
 
 More info: 
 * http://wildfly.org/news/2015/05/05/WildFly-Swarm-Released/
 * https://github.com/wildfly-swarm/wildfly-swarm
 
-# Twitter Server
+## Twitter Server
 Not done yet. Probably need to look at finatra
  
 
