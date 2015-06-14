@@ -5,7 +5,12 @@ Just playing around with the options available to build services using "embedded
 
 * [Build, Run and Test](#build-run-and-test)
  * [Building Wildfly-Swarm and examples](#building-wildfly-swarm-and-examples)
-
+* [What I mean by container?](#what-i-mean-by-container)
+* Notes
+ * [Dropwizard](#dropwizard)
+ * [Spring Boot](#spring-boot)
+ * [Wildfly Swarm](#wildfly-swarm)
+ * [Twitter Server](#twitter-server)
 
 
 ## Build, Run and Test
@@ -58,6 +63,9 @@ I'm using similar definition as the C4 model  (http://static.codingthearchitectu
 
 # Spring-boot
 
+Spring-boot executable jars
+http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#executable-jar
+
 # Wildfly-swarm
 
 More info: 
@@ -68,11 +76,4 @@ More info:
 Not done yet. Probably need to look at finatra
  
 
-
-
-
-
-
-Spring-boot executable jars
-http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#executable-jar
 
