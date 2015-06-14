@@ -1,0 +1,37 @@
+apply plugin: 'scala'
+apply plugin: 'gradle-one-jar'
+apply plugin: 'application'
+
+mainClassName = 'com.simundi.twitterserver.TServerApplication'
+
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://maven.twttr.com'
+    }
+}
+
+dependencies {
+    compile 'org.scala-lang:scala-library:2.11.1'
+    compile 'com.twitter:twitter-server_2.10:1.10.0'
+
+}
+
+
+build.dependsOn.add("oneJar")
+
+task oneJar(type: OneJar) {
+    mainClass = mainClassName
+}
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.github.rholder:gradle-one-jar:1.0.4'
+    }
+}
