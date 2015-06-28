@@ -60,66 +60,52 @@ I'm using similar definition as the C4 model  (http://static.codingthearchitectu
 
 ## Notes
 
+I haven't ran any performance test as it' easy to find it on the internet, such this link http://bayou.io/draft/Comparing_Java_HTTP_Servers_Latencies.html
 
-|Container               | Far jar Size | Bootstart Time | Memory footprint | 
-|-----------------------:|-------------:|---------------:|-----------------:|
-|Drop wizard             |12mb          | 4.5s           |                  |
-|Spring Boot Jetty       |20mb
-|Spring Boot Undertow    |18mb
-|Spring Boot Tomcat      |18mb
-|Wildfly Swarm           |31mb
+Below are q quite simple comparison about those servers. JVisualVM was used to look at memory foot print and threads. 
 
+|Container               | Far jar Size | Bootstart Time | Memory footprint | Deamon Threads | Live Threads |  
+|-----------------------:|-------------:|---------------:|-----------------:|---------------:|-------------:|
+|Drop wizard             |12mb          |  4.5s          | 50 - 70mb        | 11             | 24           |
+|Spring Boot Jetty       |20mb          | 12.4s          | 31 - 45mb        | 11             | 28           |
+|Spring Boot Undertow    |18mb          |  9.7s          | 37 - 40mb        | 10             | 16           |
+|Spring Boot Tomcat      |18mb          | 10.2s          | 35 - 40mb        | 16             | 18           |
+|Wildfly Swarm           |31mb          |  4.1s          | 12 - 40mb        | 12             | 37           |
 
-
-drop wizard - 
-Size: 12M
-Start up time: 4,516
-Memory: 75mb
-Live Threads: 37
-Deamon Threads: 13
-
-spring-boot jetty
-Size 20M
-Startup 12.399
-Memory: 31mb
-   Sart up goes up to  545mb after comes to 45mb
-Live Threads: 29
-Deamon Threads: 11
-
-spring-boot undertow 
-Size 18M
-Startup 9.681
-Memory: 40mb
-	Start up goes up to 260mb) after gc 37mb 	
-Live Threads: 16
-Deamon Threads: 10
-
-spring-boot tomcat 
-Size 18M
-Startup time: 10.188
-Memory: 40mb
-	Start up goes up to 500mb, then keeps 219mb) after gc 35mb 	
-Live Threads: 18
-Deamon Threads: 16
-
-wildly swarm - 
-Size 31M
-Startup time: 4.1 
-Memory: 13-40mb
-Live Threads: 37
-Deamon Threads: 12
-
+* Memory footprint: most of the servers used between 200-500mb during bootstrap. THe numbers on the table are for the server idle after running GC.
 
 
 ### Dropwizard
 
+The beauty of Dropwizard it's within its simplicity. Dropwizard make basic assumptions of which features your applications needs and provide you with that.
+
+I've used to quite few times and came quite handy to quick start up new apps. But when thinking about a "platform" or common architecture for microservices I think it a more sophisticated framework such Sprinb-boot might provie better infrastructure.  
+
+Some cons:
+ * Jetty dependency. Reading through the mail list they say that Dropwizard is quite coupled with jetty and there is no plan to change it. Which might have beem a fair assumption before other, and apparently faster, webservers came into picture.
+ * No CDI out of the box. Although, It' not a big deal either hard to add it to dropwizard as it has a quite simple interface. Also, couple of libraries are available to incorporate Guice or Spring into Drpowizard.  
+ 
 ### Spring-boot
 
-Spring-boot executable jars
-http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#executable-jar
+Spring Boot still a newborn, but has grown quite fast, which makes me clear that there are loads of attention($) being spend there. 
+ 
+Spring boot has much more "built in" features, seems more flexible and grown faster than Dropwizard. Apart of the tons of tools that Spring makes easy to use. No need to explain it. 
+
+
+Btw, this is nice: Spring-boot executable jars http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#executable-jar
 
 ## Wildfly-swarm
 
+Don' think s fair to assess Wildfly-Swarm as it' a alpha version. Altough, it looks quite promossing.
+
+It seems to me it' like q EE container with all the useles things skinned out. :)
+
+Few points to record and check again in the future:
+
+* Plugin for Gradle
+* Health Checks, Monitoring and Metrics support
+* Maybe an easy service discovery "add-on"
+ 
 More info: 
 * http://wildfly.org/news/2015/05/05/WildFly-Swarm-Released/
 * https://github.com/wildfly-swarm/wildfly-swarm
