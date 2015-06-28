@@ -1,0 +1,28 @@
+apply plugin: 'spring-boot'
+
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
+dependencies {
+
+    compile("javax.inject:javax.inject:1")
+
+    compile("org.springframework.boot:spring-boot-starter-web:1.2.4.RELEASE") {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+    }
+    compile("org.springframework.boot:spring-boot-starter-jersey:1.2.4.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-jetty:1.2.4.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-actuator:1.2.4.RELEASE")
+
+
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
+    }
+}

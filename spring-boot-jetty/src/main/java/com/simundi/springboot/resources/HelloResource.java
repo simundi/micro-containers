@@ -1,0 +1,21 @@
+package com.simundi.springboot.resources;
+
+import javax.inject.Named;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+
+/**
+ * Created by simundi on 13/06/2015.
+ */
+@Path("/spring-boot")
+@Named
+public class HelloResource {
+
+    public static final String HELLO_JETTY = "Hello Jetty!";
+
+    @GET
+    @Path("/hello")
+    public String hello() {
+        return HELLO_JETTY;
+    }
+}

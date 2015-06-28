@@ -60,6 +60,57 @@ I'm using similar definition as the C4 model  (http://static.codingthearchitectu
 
 ## Notes
 
+
+|Container               | Far jar Size | Bootstart Time | Memory footprint | 
+|-----------------------:|-------------:|---------------:|-----------------:|
+|Drop wizard             |12mb          | 4.5s           |                  |
+|Spring Boot Jetty       |20mb
+|Spring Boot Undertow    |18mb
+|Spring Boot Tomcat      |18mb
+|Wildfly Swarm           |31mb
+
+
+
+drop wizard - 
+Size: 12M
+Start up time: 4,516
+Memory: 75mb
+Live Threads: 37
+Deamon Threads: 13
+
+spring-boot jetty
+Size 20M
+Startup 12.399
+Memory: 31mb
+   Sart up goes up to  545mb after comes to 45mb
+Live Threads: 29
+Deamon Threads: 11
+
+spring-boot undertow 
+Size 18M
+Startup 9.681
+Memory: 40mb
+	Start up goes up to 260mb) after gc 37mb 	
+Live Threads: 16
+Deamon Threads: 10
+
+spring-boot tomcat 
+Size 18M
+Startup time: 10.188
+Memory: 40mb
+	Start up goes up to 500mb, then keeps 219mb) after gc 35mb 	
+Live Threads: 18
+Deamon Threads: 16
+
+wildly swarm - 
+Size 31M
+Startup time: 4.1 
+Memory: 13-40mb
+Live Threads: 37
+Deamon Threads: 12
+
+
+
 ### Dropwizard
 
 ### Spring-boot

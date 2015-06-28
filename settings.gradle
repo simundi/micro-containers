@@ -1,6 +1,8 @@
 rootProject.name = 'micro-containers'
 
 include 'dropwizard'
-include 'spring-boot'
 include 'twitter-server'
+include 'spring-boot-undertow'
+include 'spring-boot-tomcat'
+include 'spring-boot-jetty'
 

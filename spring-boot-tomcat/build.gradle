@@ -1,0 +1,18 @@
+apply plugin: 'spring-boot'
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.2.4.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-jersey:1.2.4.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-actuator:1.2.4.RELEASE")
+
+
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
+    }
+}
