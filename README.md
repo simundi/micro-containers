@@ -6,7 +6,7 @@ Just playing around with the options available to build services using "embedded
 * [Build, Run and Test](#build-run-and-test)
  * [Building Wildfly-Swarm and examples](#building-wildfly-swarm-and-examples)
 * [What I mean by container?](#what-i-mean-by-container)
-* Notes
+* [Notes] (#notes)
  * [Dropwizard](#dropwizard)
  * [Spring Boot](#spring-boot)
  * [Wildfly Swarm](#wildfly-swarm)
